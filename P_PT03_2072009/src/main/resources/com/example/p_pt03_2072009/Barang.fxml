@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="com.example.p_pt03_2072009.controller.BarangController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#tosupplier" text="Show Supplier Management" />
+              <MenuItem mnemonicParsing="false" onAction="#closetab" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="idlabelbarang" prefHeight="17.0" prefWidth="83.0" text="ID">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="idbarang" prefHeight="25.0" prefWidth="463.0">
+                     <HBox.margin>
+                        <Insets left="60.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="600.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="83.0" text="Nama">
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="namabarang" prefHeight="25.0" prefWidth="463.0">
+                     <HBox.margin>
+                        <Insets left="60.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="80.0" prefHeight="70.0" prefWidth="600.0">
+               <children>
+                  <Label alignment="TOP_CENTER" prefHeight="17.0" prefWidth="57.0" text="Supplier">
+                     <HBox.margin>
+                        <Insets left="8.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="pilsupp" prefHeight="10.0" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="70.0" top="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" fx:id="savebarang" onAction="#savebarang" text="Save">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" fx:id="resetbarang" onAction="#resetbarang" text="Reset">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="62.0" layoutY="10.0" fx:id="updatebarang" mnemonicParsing="false" onAction="#updatebarang" text="Update">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="tabel" onMouseClicked="#barangdipilih" prefHeight="303.0" prefWidth="600.0">
+              <columns>
+                <TableColumn fx:id="coloumn1" prefWidth="174.0" text="ID" />
+                <TableColumn fx:id="coloumn2" minWidth="0.0" prefWidth="226.0" text="Nama" />
+                  <TableColumn fx:id="coloumn3" minWidth="0.0" prefWidth="199.0" text="Supplier" />
+              </columns>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
